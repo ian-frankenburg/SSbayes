@@ -83,7 +83,7 @@ Rcpp::List dlm_df(const mat& y, const int& niter, const int& burnin, mat& C0, ma
   
   for(int i=0; i<niter; i++) {
     // forward filter
-    forward(y, m0, C0, FF, G, K, a, m, f, C, Q, R,
+    forward(y, m0, C0, FF, G, a, m, f, C, Q, R,
             alpha, beta, s, alpha0, beta0, delta_w, delta_v);
     // // backward sample
     backward(theta, a, join_rows(m0,m),join_slices(C0,C), R, G,
